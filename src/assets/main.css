@@ -1,0 +1,140 @@
+@import './base.css';
+
+/* Global styles for brick factory */
+#app {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+/* Scroll animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Intersection Observer Animation Classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-on-scroll.slide-left {
+  transform: translateX(-30px);
+}
+
+.animate-on-scroll.slide-left.animated {
+  transform: translateX(0);
+}
+
+.animate-on-scroll.slide-right {
+  transform: translateX(30px);
+}
+
+.animate-on-scroll.slide-right.animated {
+  transform: translateX(0);
+}
+
+/* Parallax effect utilities */
+.parallax-element {
+  will-change: transform;
+}
+
+/* Improved link styles for brick factory theme */
+a {
+  text-decoration: none;
+  color: #d2691e;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+a:hover {
+  color: #ff7f50;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(135deg, #d2691e, #ff7f50);
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #d2691e, #ff7f50);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-family: 'Shabnam', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(210, 105, 30, 0.3);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}

@@ -1,0 +1,6 @@
+{
+  "users": [
+    { "id": 1, "name": "Ali", "password": "Asas1234@", "email": "https://console.liara.ir" }
+  ],
+  "posts": [{ "id": 1, "title": "Hello Vue", "userId": 1 }]
+}
